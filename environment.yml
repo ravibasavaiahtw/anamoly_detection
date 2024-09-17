@@ -5,6 +5,7 @@ channels:
 dependencies:
   - appnope=0.1.4
   - asttokens=2.4.1
+  - bzip2=1.0.8
   - ca-certificates=2024.8.30
   - comm=0.2.2
   - debugpy=1.6.7
@@ -21,8 +22,10 @@ dependencies:
   - libcxx=14.0.6
   - libffi=3.4.4
   - libsodium=1.0.18
+  - libsqlite=3.45.3
+  - libzlib=1.2.13
   - matplotlib-inline=0.1.7
-  - ncurses=6.4
+  - ncurses=6.4.20240210
   - nest-asyncio=1.6.0
   - openssl=3.3.2
   - packaging=24.1
@@ -110,6 +113,7 @@ dependencies:
       - opt-einsum==3.3.0
       - optree==0.12.1
       - pandas==2.2.2
+      - patsy==0.5.6
       - pillow==10.4.0
       - protobuf==4.25.4
       - pyarrow==17.0.0
@@ -127,6 +131,7 @@ dependencies:
       - smmap==5.0.1
       - sqlalchemy==2.0.34
       - sqlparse==0.5.1
+      - statsmodels==0.14.3
       - tensorboard==2.17.1
       - tensorboard-data-server==0.7.2
       - tensorflow==2.17.0

@@ -3,7 +3,7 @@
 ```
 conda create -n "hack-autoencoder" python=3.9
 conda activate "hack-autoencoder"
-pip install -r requirements.tx
+pip install -r requirements.txt
 ```
 2. activating conda environment on VSCode or activating via terminal:
 ```

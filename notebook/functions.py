@@ -96,6 +96,27 @@ def transform_values(
     labels = dataframe.loc[time_step - 1 :, "is_anomaly"].astype("int").values
     return data, labels
 
+def transform_values_inference(
+    dataframe: pd.DataFrame, time_step: int, scaler: StandardScaler, base_features: list
+) -> np.array:
+    """Function to transform grouped dataframe into data and labels numpy arrays for inference"""
+    # Reseting infex
+    dataframe = dataframe.reset_index(drop=True)
+    # Transforming values
+    np_scaled = scaler.transform(
+        dataframe[base_features]
+    )
+    # Adding model value
+    np_scaled = np.hstack(
+        (
+            np_scaled,
+            dataframe["model"].to_numpy().reshape((dataframe["model"].shape[0]), 1),
+        )
+    )
+    # Create sequeces for each point
+    data = create_sequences(np_scaled, time_step=time_step)
+    return data
+
 
 # ------------------------------------------------------
 #                   AUTOENCODER MODEL
